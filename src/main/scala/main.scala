@@ -1,6 +1,9 @@
 package com.jmfg.training
 
-import s02typeClasses.{FileChannel, FileChannelEncodable, FileChannelImplicit, FileChannelTypeClasses, FullName, IntByteEncoder, StringByteEncoder}
+import t06.FileChannel
+import t08.{FileChannelEncodable, FullName}
+import t10.{ByteEncoder, FileChannelTypeClasses, IntByteEncoder}
+import t13.FileChannelImplicit
 
 val faker = new com.github.javafaker.Faker()
 @main
@@ -20,6 +23,10 @@ def s02(): Unit = {
 
   FileChannelImplicit.write(faker.buffy().quotes())
 
+  val encoded = implicitly[ByteEncoder[String]].encode("Hello World")
+  println(encoded.mkString("Array(", ", ", ")"))
+
   println("Finished Section 2")
+
 
 }

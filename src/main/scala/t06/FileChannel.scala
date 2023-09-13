@@ -1,5 +1,6 @@
 package com.jmfg.training
-package s02typeClasses
+package t06
+
 
 import java.io.FileOutputStream
 import java.nio.ByteBuffer

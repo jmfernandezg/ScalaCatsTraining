@@ -1,5 +1,5 @@
 package com.jmfg.training
-package s02typeClasses
+package t10
 
 import java.io.FileOutputStream
 import java.nio.ByteBuffer
@@ -7,6 +7,12 @@ import scala.util.Using
 
 trait ByteEncoder[A] {
   def encode(value: A): Array[Byte]
+}
+
+object ByteEncoder {
+  implicit object StringByteEncoder extends ByteEncoder[String] {
+    def encode(value: String): Array[Byte] = value.getBytes
+  }
 }
 
 trait ChannelEncoder {

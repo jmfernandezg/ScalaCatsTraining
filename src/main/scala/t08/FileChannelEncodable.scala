@@ -1,5 +1,6 @@
 package com.jmfg.training
-package s02typeClasses
+package t08
+
 
 import java.io.FileOutputStream
 import scala.util.Using

@@ -1,12 +1,11 @@
 package com.jmfg.training
-package s02typeClasses
+package t13
+
+
+import t10.ByteEncoder
 
 import scala.util.Using
 
-
-implicit object StringByteEncoder extends ByteEncoder[String] {
-  def encode(value: String): Array[Byte] = value.getBytes
-}
 
 trait ChannelImplicit {
 
@@ -21,5 +20,12 @@ object FileChannelImplicit extends ChannelImplicit {
       fos.write(bytes)
       fos.flush()
     }
+  }
+}
+
+implicit object Rot13StringByteEncoder extends ByteEncoder[String] {
+  def encode(objc: String): Array[Byte] = {
+    val bytes = objc.getBytes
+    bytes.map(b => (b + 13).toByte)
   }
 }
