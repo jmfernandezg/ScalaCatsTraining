@@ -84,3 +84,76 @@ Based on https://www.udemy.com/course/functional-programming-with-scala-cats/
 - Testing Laws with Discipline
 - Code: [ByteCodecLaws.sc](src/main/scala/t19/ByteCodecLaws.scala)
  
+
+
+## 20: Laws  - Code
+
+
+- Code: [ByteCodecSpec.sc](src/main/scala/t20/ByteCodecSpec.scala)
+
+## 21: Automatic Instance Derivation
+
+
+- Code: [ByteCodecSpec.sc](src/main/scala/t21/t21.scala)
+
+
+ ## 24: Summary
+
+- TypeClasses enable
+  - Extends type outside of contro
+  - Add functionality without modifying the interface
+  - Use ad-hoc polymorphism
+  - Provide several implementations of the functionality
+- Using implicites we can make typeclasses easier to use
+- TypeCLasses have laws
+- Laws make it easier to test typeclasses
+
+---
+
+# Section 3: Cats Type Classes
+
+## 26: Introduction
+
+### Outline
+- Simple typeclasses
+  - Eq
+  - Order
+  - Show
+  - Monoid
+- Higher Kinded Type
+- More TypeClasses
+  - Functor
+  - Applicative
+  - Monad
+  - MonadError
+  - Foldable
+  - Traverse
+- Testing
+
+## 27: Eq
+
+- Accounts
+```scala
+
+case class Account(id: Long, number: String, balance: BigDecimal, owner: String)
+
+```
+
+- Equality
+  - Structural Equality
+  - Referential Equality
+  - TypeClass Equality
+
+### Eq Laws
+
+- The convention is one uppercase letter
+- We use IsEq to return a boolean
+- Everybody should be equal to itself
+- Symmetry: X == Y => Y == X
+- AntiSymmetry X != Y => Y != X
+- 
+
+
+## 28: Eq - Code
+
+- Code: [ByteCodecSpec.sc](src/main/scala/t28/Account.scala)

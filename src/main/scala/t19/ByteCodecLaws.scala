@@ -24,6 +24,8 @@ trait ByteCodecLaws[A] extends Laws {
   }
 }
 
+
+
 object Main extends App {
   println("Hello World")
 }
